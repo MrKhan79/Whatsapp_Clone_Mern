@@ -10,9 +10,8 @@
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm start\" \"npm run client\"",
     "heroku config":"set NPM_CONFIG_PRODUCTION=false",
-    "install": "npm i --prefix frontend --production=false",
     "heroku-prebuild": "npm install --only=dev",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --preifix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "proxy": "http://localhost:9000",
   "author": "Sahil Khan",
