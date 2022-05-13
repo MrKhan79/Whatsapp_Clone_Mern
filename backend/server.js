@@ -123,5 +123,5 @@ app.post('/messages/new', (req,res) =>{
 
 
 //listen
-app.listen(port, ()=>console.log(`Listining on localhost ${connection_url}`));
+app.listen(port, ()=>console.log(`Listining on localhost ${port}`));
 
