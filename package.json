@@ -1,7 +1,6 @@
 {
   "name": "whatsapp-backend",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -9,7 +8,7 @@
     "start": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "heroku-postbuild" : "NPM_CONFIG_PRODUCTION=false npm install --preifix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --preifix frontend && npm run build --prefix frontend"
   },
   "proxy": "http://localhost:9000",
   "author": "Sahil Khan",
@@ -21,5 +20,20 @@
     "express": "^4.18.0",
     "mongoose": "^6.3.1",
     "pusher": "^5.1.0-beta"
-  }
+  },
+  "engines": {
+    "npm": "8.5.0",
+    "node": "16.14.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrKhan79/Whatsapp_Clone_Mern.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/MrKhan79/Whatsapp_Clone_Mern/issues"
+  },
+  "homepage": "https://github.com/MrKhan79/Whatsapp_Clone_Mern#readme",
+  "description": ""
 }
