@@ -43,11 +43,25 @@ app.use(cors());
 
 
 //Db config
-const connection_url = process.env.MONGO_URI
-mongoose.connect(connection_url,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
+// const connection_url = process.env.MONGO_URI
+// mongoose.connect(connection_url,{
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+// });
+const connectDB = async () => {
+    try {
+      const conn = await mongoose.connect(process.env.MONGO_URI, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+      });
+      console.log("MongoDB connected!");
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+      process.exit();
+    }
+  };
+
+  connectDB();
 
 
 const db = mongoose.connection
