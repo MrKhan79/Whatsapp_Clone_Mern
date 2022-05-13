@@ -34,7 +34,6 @@ pusher.trigger("my-channel", "my-event", {
 //middleware
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname,"frontend", "build")));
 
 
 
@@ -83,8 +82,10 @@ db.once('open',()=>{
 
 
 //api routes
+if(process.env.NODE_ENV === "production"){
+app.use(express.static(path.join(__dirname,"frontend", "build")));
 app.get("/",async (req,res) =>res.sendFile(path.resolve(__dirname,"frontend", "build", "index.html")));
-
+}
 
 //to read all messages from db
 app.get('/messages/sync', (req,res) =>{
